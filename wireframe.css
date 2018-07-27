@@ -130,7 +130,7 @@ header * {
 header img {
   filter: drop-shadow(-1px -1px 3px white);
   -webkit-filter: drop-shadow(-1px -1px 3px white);
-  margin-right: 40px;
+  margin-right: 40px;   
 }
 
 nav,
