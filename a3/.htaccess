@@ -13,7 +13,7 @@ KrbVerifyKDC off
 # If assignments allow more partners, add more 'require user' lines
   
   require user s3719476@RMIT.INTERNAL 
-  require user s1234568@RMIT.INTERNAL
+  require user s3717497@RMIT.INTERNAL
 
 
 # Staff access, do not modify: 
