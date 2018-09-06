@@ -1,1 +1,777 @@
-/* Insert your styles here */
+body {
+    background-color: #9A3531;
+    margin: 0;
+    min-width: 300px;
+    min-height: 475px;
+}
+
+header{
+    position:fixed;
+    background-color: #ffffff;
+    height:80px;
+    z-index: 1;
+    width:100%;
+    border-bottom: 1px solid #000000;
+}
+
+header .header-bar{
+    display:block;
+}
+
+header .bar-info{
+    display:inline-block;
+    width: 100%;
+    position:absolute;
+    left:0px;
+    
+}
+
+header .bar-nav{
+    display:inline-block;
+    right:0px;
+    width:100%;
+    position:absolute;
+}
+
+header .brand-logo{
+    display:inline-block;
+    height: 60px;
+    margin: 10px 0px 10px 10px;
+    padding: 0px 20px 0px 0px;
+    float:left;
+    border-right: 1px solid #9A3531;
+}
+
+header .dropdown-content{
+    display:inline-block;
+    position:absolute;
+}
+
+header .important-info{
+    display:inline-block;
+    margin: 10px 30px;
+    padding: 0px;
+    list-style: none;
+    line-height: 20px;  
+    float:left;
+    font-family: corbel;
+    font-size: 10px;
+}
+
+header .dropdown-menu{
+    display:inline-block;
+    height:80px;
+    width:fit-content;
+    position:absolute;
+    z-index:1;
+    right:80px;
+    float:left;
+} 
+
+header .dropbtn{
+    width:fit-content;
+    height:60px;
+    display:inline-block;
+    border-left: 1px solid #9A3531;
+    border-right: 1px solid #9A3531;
+    padding: 10px;
+}
+
+header .dropdown-menu:hover .dropbtn{
+    background-color: #4f4f4f;
+}
+
+header .menu{
+    background-image: url(../img/menu-icon-red.png);
+    background-size: 60px 60px;
+    background-repeat: no-repeat;
+    background-position: center;
+    height:60px;
+    width:60px;
+    display:inline-block;
+    float:left;
+}
+
+header .dropdown-menu:hover .menu{
+    background-image: url(../img/menu-icon-white.png);
+}
+
+header .dropbtn p{
+    line-height: 40px;
+    margin:0px;
+    padding: 10px 0px 10px 10px;
+    text-align: center;
+    font-family: impact;
+    font-size:40px;
+    color:#9A3531;
+    display:inline-block;
+    text-transform: uppercase;
+}
+
+header .dropdown-menu:hover .btn-container p{
+    color: #ffffff;
+}
+
+header .dropdown-content{
+    width:100%;
+    left:0px;
+    top:80px;
+    position:fixed;
+    z-index:1; 
+    margin:0 auto;
+    padding:0px;
+    list-style: none;
+    background-color: rgba(0, 0, 0, 0.7);
+    text-align: center;
+    height: 0px;
+    transition:height 0.3s;
+    overflow: hidden;
+}
+
+header .dropdown-menu:hover .dropdown-content{
+    height:80px;
+}
+
+header .dropdown-content li{
+    display:inline-block;
+    align-content: center;
+    padding:25px 30px;
+    color: #ffffff;
+    line-height: 30px;
+    font-family: impact;
+    font-size: 25px;
+    box-sizing:border-box;
+    border-bottom: 3px solid rgba(0, 0, 0, 0);
+    height:80px;
+}
+
+header .dropdown-content li:hover{
+    border-bottom: 3px solid #9A3531;
+}
+
+header .icon{
+    display:inline-block;
+    position:absolute;
+    right:0px;
+    width:80px;
+    height:80px;
+    padding:10px;
+    box-sizing: border-box;
+}
+
+header .icon:hover{
+    background-color: #4f4f4f;
+}
+
+header .icon .login-account{
+    background-image: url(../img/profile-icon-red.png);
+    background-size: 60px 60px;
+    background-repeat: no-repeat;
+    background-position: center;
+    height:60px;
+    width:60px;
+    display:inline-block;
+}
+
+header .icon:hover .login-account{
+    background-image: url(../img/profile-icon-white.png);
+}
+
+@media only screen and (max-width: 800px){
+    header .important-info{
+        display:block;
+        width:100%;
+    }
+    
+    header .btn-container p{
+        display:none;
+    }
+    
+    header .menu{
+        background-image: url(../img/menu-icon-name-red.png);
+    }
+    
+    header .dropdown-menu:hover .menu{
+        background-image: url(../img/menu-icon-name-white.png);
+    }
+    
+    header .dropdown-content{
+        display:none;
+    }
+    
+    header .dropdown-contact{
+        margin: 0px;
+        display:block;  
+        width:100%;
+        position:relative;
+    }
+    
+    header .important-info{
+        width:100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        margin:0px;
+        height:0px;
+        overflow:hidden;
+        transition:height 0.3s;  
+    }
+    
+    header .dropdown-contact:hover .important-info{
+        display:block;
+        height:60px;
+    }
+    
+    header .important-info li{
+        position:relative;
+        width:100%;
+        text-align: center;
+        color: #ffffff;
+    }
+    
+    header .expand{
+        width:100%;
+        height:25px;
+        border-top: 1px solid #9A3531;
+        border-bottom: 1px solid #9A3531;
+        background-color: #ffffff;
+        background-image: url(../img/down-red.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 25px;
+        float:left;
+        box-sizing: border-box;
+    }
+    
+    header .dropdown-contact:hover .expand{
+        background-color:#4f4f4f;
+        border-bottom: 1px solid #ffffff;
+        background-image: url(../img/up-white.png);
+    }
+    
+    header .brand-logo{
+        border-right:none;
+    }
+}
+
+/*main stuff*/
+
+main{
+    z-index: 0;
+    width:100%;
+    padding:80px 0px 0px 0px;
+    overflow: auto;
+}
+
+/*index page main css*/
+main .main-image{
+    /*Creative Commons image sourced from http://static.uk.businessinsider.com/image/5a2275e1c1bde0e0548b5701.jpg?_ga=2.265371719.998083639.1535778426-160032605.1535778426 and used for educational purposes only*/
+    height: fit-content;
+    width:100%;
+    overflow:hidden;
+    position: relative;
+    margin-bottom: 40px;
+}
+
+main .main-image img{
+    max-width:100%;
+    filter: brightness(80%);
+    
+}
+
+main .main-image-text p{
+    display: inline-block;
+    margin: 0px;
+    font-weight: 1000;
+    line-height: 100px;
+    font-family: corbel;
+    text-transform: uppercase;
+    font-size: 140px;
+    color: #ffffff;
+}
+
+main .main-image-text{
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    text-align: center;
+    background-color: rgb(0, 0, 0, 0.6);
+    padding: 30px 0px;
+}
+
+main .main-info{
+    width:calc(100% - 40px);
+    height: 340px;
+    display:inline-block;
+    padding: 20px;
+    margin:0px 20px 20px 20px;
+    background-color: #ffffff; 
+    box-sizing: border-box;
+}
+
+main .main-info img{
+    display: inline-block;
+    height: 300px;
+}
+
+main .main-info .main-text{
+    display:inline-block;
+}
+
+main .main-about .main-text{
+    float:right;
+    padding: 0px 0px 0px 20px;
+    width:calc(100% - 430px);
+}
+
+main .main-about img{
+    float:left;
+}
+
+main .main-history img{
+    float:right;
+}
+
+main .main-history .main-text{
+    float:left;
+    padding:20px 0px 0px 0px;
+    width:calc(100% - 450px);
+}
+
+main .main-text{
+    font-size: 15px;
+    font-family: corbel;
+}
+
+/*main menu css*/
+
+main .menu-list{
+    display:block;
+    list-style: none;
+    padding:0px;
+    margin:0px;
+    width:100%;
+    text-align: center;
+    float:left;
+}
+
+main .menu-list li{
+    display:inline-block;
+    margin: 20px;
+}
+
+main .menu-items{
+    background-color:#ffffff;
+    display:inline-block;
+    width:260px;
+    height:450px;
+    float:left;
+    filter:brightness(85%);
+    color:#000000;
+}
+
+main .menu-items:hover{
+    filter:brightness(100%);
+}
+
+main .menu-items img{
+    object-fit: cover;
+    width:260px;
+    height:300px;
+    align-content: center;
+    display:block;
+}
+
+main .menu-items p{
+    padding: 10px;
+    margin:0px;
+    font-family:corbel;
+}
+
+main .menu-items h1{
+    margin:5px;
+    font-family:impact;
+    letter-spacing: 1px;
+}
+
+/*individual product css*/
+
+main .product{
+    display:block;
+    margin:10px auto;
+    max-width:1000px;
+    padding:0px;
+    background-color: #2d2d2d;
+    overflow:auto;
+    border-radius: 30px;
+}
+
+main .product .text{
+    color:#ffffff;
+    text-align: center;
+    margin:0px 10px;
+}
+
+main .product .text h1{
+    margin: 5px 0px 0px 0px;
+    font-family: impact;
+    letter-spacing: 1px;
+}
+
+main .product .text p{
+    font-family: corbel;
+    margin:0px;
+    padding:0px 0px 5px 0px;
+    border-bottom: 1pt solid #ffffff;
+}
+
+main .product img{
+    height:480px;
+    max-width:1000px;
+    display:block;
+    width:100%;
+    object-fit: cover;
+    margin:auto;
+}
+
+main .product-buttons form{
+    width:100%;
+}
+
+main .product-buttons .hidden{
+    display:none;
+}
+
+main .product-buttons{
+    display:block;
+    margin: 10px;
+    height: 30px;
+}
+
+main .product-buttons .quantity{
+    display:inline-block;
+    float:left;
+    margin:0px;
+}
+
+main .product-buttons .quantity .change{
+    float:left;
+}
+
+main .product-buttons .qty{
+    width:35px;
+    height:30px;
+    border:none;
+    padding:0px;
+    text-align: center;
+}
+
+main .product-buttons .updown{
+    background-color: #9a3531;
+    border:none;
+    height: 30px;
+    width:30px;
+    color:#ffffff;
+    font-family: corbel;
+    font-size: 25px;
+    line-height: 27px;
+}
+
+main .product-buttons .decrement{
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+main .product-buttons .increment{
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+main .product-buttons .cost{
+    line-height: 20px;
+    padding:5px;
+    margin:0px 10px;
+    color:#ffffff;
+    font-family: corbel;
+    font-size: 15px;
+}
+
+main .product-buttons .size{
+    display:inline-block;
+    float:right;
+    margin: 0px 10px;
+    border-radius: 15px;
+    height:30px;
+    font-family: corbel;
+}
+
+main .product-buttons .submit{
+    display:inline-block;
+    float:right;
+    height:30px;
+    width:30px;
+    background-color: #ffffff;
+    border:none;
+    background-image: url(../img/shop-icon.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px 20px;
+    border-radius: 15px;
+}
+
+main .product-buttons .button-right{
+    display:inline-block;
+    float:right;
+}
+
+/*login css*/
+
+main .login{
+    width:100%;
+    overflow: hidden;
+    height:max-content;
+}
+
+main .login .img{
+    height:calc(100vh - 280px);
+    display:block;
+    background:linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url(../img/kebab-main-home.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1
+}
+
+main .login .content{
+    position:relative;
+    top:10%;
+    margin:auto;
+    list-style: none;
+    padding:0px;
+    text-align: center;
+    width:fit-content;
+}
+
+main .login .content li{
+    display:inline-block;
+    color:#ffffff;
+    float:left;
+}
+
+main .login .content .details .username{
+    display:block;
+}
+
+main .login .details p{
+    font-family: impact;
+    font-size: 50px;
+    margin:0px;
+    text-align: left;
+}
+
+main .login .content .info{
+    margin:10px;
+    height:30px;
+    width:350px;
+    border-radius:15px;
+    display:inline-block;
+    border:0.5px solid #a29375;
+    box-sizing: border-box;
+    padding:0px 10px;
+    background-color: rgba(255,255,255,0.4);
+    color: #ffffff;
+    font-family: corbel;
+}
+
+::placeholder {
+    color: #ffffff;
+    opacity:1;
+    font-family: corbel;
+}
+
+main .login .content .submit{
+    height:30px;
+    width:30px;
+    border-radius: 15px;
+    background-color:#ffffff;
+    border:none;
+    display:inline-block;
+    padding:0px;
+    float:left;
+    margin:10px;
+    background-image: url(../img/arrow-right.png);
+    background-size:25px 25px;
+    background-position:center;
+    background-repeat: no-repeat;
+}
+
+main .login .content .password{
+    float:left;
+}
+
+main .login .content .text{
+    font-family:corbel;
+    font-size:50px;
+    line-height: 50px;
+    margin:20px 40px;
+}
+
+
+
+@media only screen and (max-width: 800px){
+    main{
+        padding:105px 0px 0px 0px;
+        min-height: calc(100% - 245px);
+    }
+    
+    main .main-image{
+        height:fit-content;
+    }
+    
+    main .main-image-text p{
+        font-size:40px;
+        line-height:50px;
+    }
+    
+    main .main-history img{
+        margin:auto;
+        float:none;
+    }
+    
+    main .main-about img{
+        margin:auto;
+        float:none;
+    }
+    
+    main .main-info img{
+        display:block;
+        height:auto;
+        max-width: 100%;
+    }
+    
+    main .main-about .main-text{
+        float:none;
+        margin:auto;
+        padding:0px;
+        width:100%;
+        text-align: center;
+    }
+    
+    main .main-history .main-text{
+        float:none;
+        margin:auto;
+        padding:0px;
+        width:100%;
+        text-align: center;
+    }
+    
+    main .main-info{
+        height:auto;
+        overflow: auto;
+    }
+    
+    main .login .img{
+        height:calc(100vh - 245px);
+    }
+    
+    main .login .content .details .password{
+        display:block;
+        float:none;
+    }
+    
+    main .login .content .details .info{
+        margin:5px;
+        width:250px;
+    }
+    
+    main .login .content .details{
+        display:block;
+    }
+    
+    main .login .content li{
+        float:none;
+    }
+    
+    main .login .details p{
+        text-align: center;
+    }
+    
+    main .login .content .text{
+        display:none;
+    }
+    
+}
+
+/*footer stuff*/
+footer{
+    background-color: #000000;
+    padding: 10px 20px;
+    font-family: corbel;
+    width: 100%;
+    box-sizing: border-box;
+    height:200px;
+    position:relative;
+}
+
+footer .website-footer .important-info{
+    list-style: none;
+    padding:0px;
+    width:fit-content;
+    display:inline-block;
+    margin:0px;
+    padding: 20px 0px;
+}
+
+footer .website-footer{
+    border-bottom: 1pt solid #4f4f4f;
+    margin:0px 0px 10px 0px;
+    height: 100px;
+    font-size: 15px;
+    color:#ffffff;
+}
+
+footer .website-footer p{
+    text-transform: uppercase;
+    width: fit-content;
+    margin:0px;
+    display:inline-block;
+    float:right;
+    padding:35px 0px;
+}
+
+footer .copyright-footer{
+    float:right;
+    text-align: right;
+    font-size:10px;
+    color: #7c7c7c;
+}
+
+@media only screen and (max-width: 800px){
+    footer{
+        height:140px;
+    }
+    
+    footer .website-footer{
+        font-size: 10px;
+        height:50px;
+    }
+    
+    footer .copyright-footer{
+        font-size:8px;
+        line-height: 15px;
+    }
+    
+    footer .website-footer p{
+        display: none;
+        height:50px;
+    }
+    
+    footer .website-footer .important-info{
+        padding:0px;
+    }
+}
+
+*{
+    text-decoration: none;
+}
+
+html{
+    height:100%;
+}
