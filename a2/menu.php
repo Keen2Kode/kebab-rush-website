@@ -21,9 +21,9 @@
                   <div class="dropdown-contact">
                       <div class="expand"></div>
                       <ul class="important-info">
-                          <li class="location">Location: Kings Rd &amp; Taylors Road, Delahey VIC 3037</li>
-                          <li class="phone">Phone: 0410371299</li>
-                          <li class="hours">Opening Hours: 7 Days, 5PM - 2AM</li>
+                          <li class="location"><div class="info"><div class="contact-icon"></div><p>Kings Rd &amp; Taylors Road, Delahey VIC 3037</p></div></li>
+                          <li class="phone"><div class="info"><div class="contact-icon"></div><p>0410371299</p></div></li>
+                          <li class="hours"><div class="info"><div class="contact-icon"></div><p>7 Days, 5PM - 2AM</p></div></li>
                       </ul>
                   </div>
               </div>
@@ -50,6 +50,7 @@
         <ul class="menu-list">
             <li>
                 <a href="product.php"><article class="menu-doner menu-items">
+                    <!---/*image sourced from http://cdn.hairybikers.com/uploads/images/_recipeImage/898/kebab.jpg and used for educational purposes only*/-->
                     <img src="img/menu-donerkebab.jpg">
                     <h1>Doner Kebab</h1>
                     <p>Seasoned Halal meat, sauces and variety of vegetables rolled inside a pita</p>
@@ -57,6 +58,7 @@
             </li>
             <li>
                 <a href="snack-pack.php"><article class="menu-snackpack menu-items">
+                    <!---/*image sourced from https://static1.squarespace.com/static/586b3163893fc03b14ff7dc9/586d908d9de4bb1e94da240a/587ae491ebbd1ab22efbff91/1484449811205/Halal-Snack-Pack-1-WEB.jpg and used for educational purposes only*/-->
                     <img src="img/menu-snackpack.jpg">
                     <h1>Snack Pack</h1>
                     <p>A mixture of Halal meats and chips served with a variety of sauces, cheese and peppers</p>
@@ -64,6 +66,7 @@
             </li>
             <li>
                 <a href="kebab-skewer.php"><article class="menu-skewer menu-items">
+                    <!---/*image sourced from https://www.seriouseats.com/recipes/images/2015/05/20150515-yang-rou-chuan-lamb-skewers-shao-zhong-16.jpg and used for educational purposes only*/-->
                     <img src="img/menu-skewer.jpg">
                     <h1>Kebab Skewer</h1>
                     <p>Chunks of Halal meats served on a skewer</p>
@@ -76,11 +79,11 @@
     <footer>
         <div class="website-footer">
             <ul class="important-info">
-                <li class="location">Location: Kings Rd &amp; Taylors Road, Delahey VIC 3037</li>
-                <li class="phone">Phone: 0410371299</li>
-                <li class="hours">Opening Hours: 7 Days, 5PM - 2AM</li>
+                <li class="location"><div class="image"></div><p>Kings Rd &amp; Taylors Road, Delahey VIC 3037</p></li>
+                <li class="phone"><div class="image"></div><p>0410371299</p></li>
+                <li class="hours"><div class="image"></div><p>7 Days, 5PM - 2AM</p></li>
             </ul>
-            <p>Stop by for a kebab-astic time!</p>
+            <p class="saying">Stop by for a kebab-astic time!</p>
         </div>
         <div class="copyright-footer">
           <div>&copy;<script>

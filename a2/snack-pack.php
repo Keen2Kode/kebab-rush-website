@@ -18,13 +18,14 @@
       <header>
           <div class="header-bar">
               <div class="bar-info">
+                  <!---/*image sourced from https://static1.squarespace.com/static/586b3163893fc03b14ff7dc9/586d908d9de4bb1e94da240a/587ae491ebbd1ab22efbff91/1484449811205/Halal-Snack-Pack-1-WEB.jpg and used for educational purposes only*/-->
                   <a href="index.php" class="brand-logo"><img src="img/kebab-rush-logo.png" alt="Kebab Rush" width=auto height=60px></a>
                   <div class="dropdown-contact">
                       <div class="expand"></div>
                       <ul class="important-info">
-                          <li class="location">Location: Kings Rd &amp; Taylors Road, Delahey VIC 3037</li>
-                          <li class="phone">Phone: 0410371299</li>
-                          <li class="hours">Opening Hours: 7 Days, 5PM - 2AM</li>
+                          <li class="location"><div class="info"><div class="contact-icon"></div><p>Kings Rd &amp; Taylors Road, Delahey VIC 3037</p></div></li>
+                          <li class="phone"><div class="info"><div class="contact-icon"></div><p>0410371299</p></div></li>
+                          <li class="hours"><div class="info"><div class="contact-icon"></div><p>7 Days, 5PM - 2AM</p></div></li>
                       </ul>
                   </div>
               </div>
@@ -87,11 +88,11 @@
     <footer>
         <div class="website-footer">
             <ul class="important-info">
-                <li class="location">Location: Kings Rd &amp; Taylors Road, Delahey VIC 3037</li>
-                <li class="phone">Phone: 0410371299</li>
-                <li class="hours">Opening Hours: 7 Days, 5PM - 2AM</li>
+                <li class="location"><div class="image"></div><p>Kings Rd &amp; Taylors Road, Delahey VIC 3037</p></li>
+                <li class="phone"><div class="image"></div><p>0410371299</p></li>
+                <li class="hours"><div class="image"></div><p>7 Days, 5PM - 2AM</p></li>
             </ul>
-            <p>Stop by for a kebab-astic time!</p>
+            <p class="saying">Stop by for a kebab-astic time!</p>
         </div>
         <div class="copyright-footer">
           <div>&copy;<script>

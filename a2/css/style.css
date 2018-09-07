@@ -47,18 +47,57 @@ header .dropdown-content{
     position:absolute;
 }
 
+header .important-info li .info{
+    display:block;
+    width:fit-content;
+    height:20px;
+    margin:0px;
+}
+
+header .dropdown-contact li .contact-icon{
+    height:20px;
+    width:20px;
+    margin:0px;
+    display:inline-block;
+    background-repeat: no-repeat;
+    background-position: center;
+    float:left;
+}
+
+header .dropdown-contact .location .contact-icon{
+    background-image: url(../img/location.png);
+    background-size: 10px 15px;
+    padding:2.5px 0x;
+}
+
+header .dropdown-contact .phone .contact-icon{
+    background-image: url(../img/phone.png);
+    background-size: 15px 15px;
+}
+
+header .dropdown-contact .hours .contact-icon{
+    background-image: url(../img/time.png);
+    background-size: 15px 15px;
+}
+
 header .important-info{
     display:inline-block;
     margin: 10px 30px;
     padding: 0px;
-    list-style: none;
-    line-height: 20px;  
+    list-style: none;  
     float:left;
-    font-family: corbel;
-    font-size: 10px;
 }
 
-header .dropdown-menu{
+header .important-info p{
+    font-family: corbel;
+    font-size: 15px;
+    line-height: 20px;
+    margin:0px 10px;
+    display:inline-block;
+    float:left;
+}
+
+header nav .dropdown-menu{
     display:inline-block;
     height:80px;
     width:fit-content;
@@ -68,20 +107,21 @@ header .dropdown-menu{
     float:left;
 } 
 
-header .dropbtn{
+header nav .dropbtn{
     width:fit-content;
-    height:60px;
+    height:80px;
     display:inline-block;
     border-left: 1px solid #9A3531;
     border-right: 1px solid #9A3531;
     padding: 10px;
+    box-sizing: border-box;
 }
 
-header .dropdown-menu:hover .dropbtn{
+header nav .dropdown-menu:hover .dropbtn{
     background-color: #4f4f4f;
 }
 
-header .menu{
+header nav .menu{
     background-image: url(../img/menu-icon-red.png);
     background-size: 60px 60px;
     background-repeat: no-repeat;
@@ -92,11 +132,11 @@ header .menu{
     float:left;
 }
 
-header .dropdown-menu:hover .menu{
+header nav .dropdown-menu:hover .menu{
     background-image: url(../img/menu-icon-white.png);
 }
 
-header .dropbtn p{
+header nav .dropbtn p{
     line-height: 40px;
     margin:0px;
     padding: 10px 0px 10px 10px;
@@ -108,11 +148,11 @@ header .dropbtn p{
     text-transform: uppercase;
 }
 
-header .dropdown-menu:hover .btn-container p{
+header nav .dropdown-menu:hover .btn-container p{
     color: #ffffff;
 }
 
-header .dropdown-content{
+header nav .dropdown-content{
     width:100%;
     left:0px;
     top:80px;
@@ -128,11 +168,11 @@ header .dropdown-content{
     overflow: hidden;
 }
 
-header .dropdown-menu:hover .dropdown-content{
+header nav .dropdown-menu:hover .dropdown-content{
     height:80px;
 }
 
-header .dropdown-content li{
+header nav .dropdown-content a:link li{
     display:inline-block;
     align-content: center;
     padding:25px 30px;
@@ -143,13 +183,24 @@ header .dropdown-content li{
     box-sizing:border-box;
     border-bottom: 3px solid rgba(0, 0, 0, 0);
     height:80px;
+    transition: background-color 0.2s;
 }
 
-header .dropdown-content li:hover{
+header nav .dropdown-content a:visited li{
+    color: #9a3531;
+}
+
+header nav .dropdown-content a:hover li{
     border-bottom: 3px solid #9A3531;
+    background-color: rgba(152, 54, 50, 0.5);
+    color:#ffffff;
 }
 
-header .icon{
+header nav .dropdown-content a:active li{
+    background-color: rgba(198, 91, 87, 0.7);
+}
+
+header nav .icon{
     display:inline-block;
     position:absolute;
     right:0px;
@@ -159,11 +210,11 @@ header .icon{
     box-sizing: border-box;
 }
 
-header .icon:hover{
+header nav .icon:hover{
     background-color: #4f4f4f;
 }
 
-header .icon .login-account{
+header nav .icon .login-account{
     background-image: url(../img/profile-icon-red.png);
     background-size: 60px 60px;
     background-repeat: no-repeat;
@@ -173,29 +224,28 @@ header .icon .login-account{
     display:inline-block;
 }
 
-header .icon:hover .login-account{
+header nav .icon:hover .login-account{
     background-image: url(../img/profile-icon-white.png);
 }
 
 @media only screen and (max-width: 800px){
     header .important-info{
         display:block;
-        width:100%;
     }
     
     header .btn-container p{
         display:none;
     }
     
-    header .menu{
+    header nav .menu{
         background-image: url(../img/menu-icon-name-red.png);
     }
     
-    header .dropdown-menu:hover .menu{
+    header nav .dropdown-menu:hover .menu{
         background-image: url(../img/menu-icon-name-white.png);
     }
     
-    header .dropdown-content{
+    header nav .dropdown-content{
         display:none;
     }
     
@@ -212,7 +262,8 @@ header .icon:hover .login-account{
         margin:0px;
         height:0px;
         overflow:hidden;
-        transition:height 0.3s;  
+        transition:height 0.3s; 
+        text-align: center;
     }
     
     header .dropdown-contact:hover .important-info{
@@ -222,9 +273,11 @@ header .icon:hover .login-account{
     
     header .important-info li{
         position:relative;
-        width:100%;
+        width:fit-content;
         text-align: center;
         color: #ffffff;
+        height:20px;
+        margin:auto;
     }
     
     header .expand{
@@ -247,6 +300,18 @@ header .icon:hover .login-account{
         background-image: url(../img/up-white.png);
     }
     
+    header .dropdown-contact .location .contact-icon{
+        background-image: url(../img/location-white.png);
+    }
+    
+    header .dropdown-contact .phone .contact-icon{
+        background-image: url(../img/phone-white.png);
+    }
+    
+    header .dropdown-contact .hours .contact-icon{
+        background-image: url(../img/time-white.png);
+    }
+    
     header .brand-logo{
         border-right:none;
     }
@@ -259,11 +324,11 @@ main{
     width:100%;
     padding:80px 0px 0px 0px;
     overflow: auto;
+    min-height: calc(100vh - 280px);
 }
 
 /*index page main css*/
 main .main-image{
-    /*Creative Commons image sourced from http://static.uk.businessinsider.com/image/5a2275e1c1bde0e0548b5701.jpg?_ga=2.265371719.998083639.1535778426-160032605.1535778426 and used for educational purposes only*/
     height: fit-content;
     width:100%;
     overflow:hidden;
@@ -310,6 +375,8 @@ main .main-info{
 main .main-info img{
     display: inline-block;
     height: 300px;
+    box-shadow: 2px 2px 5px 0px #a2a2a2;
+    border-radius: 5%;
 }
 
 main .main-info .main-text{
@@ -338,7 +405,14 @@ main .main-history .main-text{
 
 main .main-text{
     font-size: 15px;
+}
+
+main .main-text p{
     font-family: corbel;
+}
+
+main .main-text h1{
+    font-family: impact;
 }
 
 /*main menu css*/
@@ -358,18 +432,23 @@ main .menu-list li{
     margin: 20px;
 }
 
-main .menu-items{
-    background-color:#ffffff;
-    display:inline-block;
-    width:260px;
-    height:450px;
-    float:left;
-    filter:brightness(85%);
-    color:#000000;
+main .menu-items {
+    background-color: rgba(39, 39, 39, 0.32);
+    display: inline-block;
+    width: 260px;
+    height: 430px;
+    float: left;
+    filter: brightness(75%);
+    color: #ffffff;
+    transition: all 0.3s;
 }
 
-main .menu-items:hover{
-    filter:brightness(100%);
+main .menu-items:hover {
+    filter: brightness(100%);
+    background-color: #fdfdfd;
+    color: #6e2d2d;
+    transform: scale(1.02);
+    box-shadow: 3px 3px 8px 2px #0000002e;
 }
 
 main .menu-items img{
@@ -533,6 +612,7 @@ main .login{
 main .login .img{
     height:calc(100vh - 280px);
     display:block;
+    /*image sourced from http://static.uk.businessinsider.com/image/5a2275e1c1bde0e0548b5701.jpg?_ga=2.265371719.998083639.1535778426-160032605.1535778426 and used for educational purposes only*/
     background:linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url(../img/kebab-main-home.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -594,7 +674,7 @@ main .login .content .submit{
     border:none;
     display:inline-block;
     padding:0px;
-    float:left;
+    float:right;
     margin:10px;
     background-image: url(../img/arrow-right.png);
     background-size:25px 25px;
@@ -719,6 +799,43 @@ footer .website-footer .important-info{
     padding: 20px 0px;
 }
 
+footer .website-footer .important-info li{
+    display:block;
+    height:20px;  
+}
+
+footer .website-footer .important-info li p{
+    display:block;
+    padding:0px 0px 0px 10px;
+    float:left;
+    margin:0px;
+}
+
+footer .website-footer .important-info div{
+    height:15px;
+    width:15px;
+    background-repeat: no-repeat;
+    background-position:center;
+    display:inline-block;
+    float:left;
+    margin:2.5px;
+}
+
+footer .website-footer .important-info .location div{
+    background-image: url(../img/location-white.png);
+    background-size:10px 15px;
+}
+
+footer .website-footer .important-info .phone div{
+    background-image: url(../img/phone-white.png);
+    background-size:15px 15px;
+}
+
+footer .website-footer .important-info .hours div{
+    background-image: url(../img/time-white.png);
+    background-size:15px 15px;
+}
+
 footer .website-footer{
     border-bottom: 1pt solid #4f4f4f;
     margin:0px 0px 10px 0px;
@@ -727,7 +844,7 @@ footer .website-footer{
     color:#ffffff;
 }
 
-footer .website-footer p{
+footer .website-footer .saying{
     text-transform: uppercase;
     width: fit-content;
     margin:0px;
@@ -739,8 +856,8 @@ footer .website-footer p{
 footer .copyright-footer{
     float:right;
     text-align: right;
-    font-size:10px;
-    color: #7c7c7c;
+    font-size:15px;
+    color: #9b9b9b;
 }
 
 @media only screen and (max-width: 800px){
@@ -754,17 +871,42 @@ footer .copyright-footer{
     }
     
     footer .copyright-footer{
-        font-size:8px;
-        line-height: 15px;
+        font-size:10px;
+        line-height: 8px;
     }
     
-    footer .website-footer p{
+    footer .website-footer .saying{
         display: none;
-        height:50px;
     }
     
     footer .website-footer .important-info{
         padding:0px;
+    }
+    
+    footer .website-footer .important-info li{
+        height:15px;
+    }
+    
+    footer .website-footer .important-info div{
+    height:10px;
+    width:10px;
+    float:left;
+    margin:2.5px;
+    }
+
+    footer .website-footer .important-info .location div{
+        background-image: url(../img/location-white.png);
+        background-size:5px 10px;
+    }
+
+    footer .website-footer .important-info .phone div{
+        background-image: url(../img/phone-white.png);
+        background-size:10px 10px;
+    }
+
+    footer .website-footer .important-info .hours div{
+        background-image: url(../img/time-white.png);
+        background-size:10px 10px;
     }
 }
 

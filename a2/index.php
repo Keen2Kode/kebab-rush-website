@@ -21,9 +21,9 @@
                   <div class="dropdown-contact">
                       <div class="expand"></div>
                       <ul class="important-info">
-                          <li class="location">Location: Kings Rd &amp; Taylors Road, Delahey VIC 3037</li>
-                          <li class="phone">Phone: 0410371299</li>
-                          <li class="hours">Opening Hours: 7 Days, 5PM - 2AM</li>
+                          <li class="location"><div class="info"><div class="contact-icon"></div><p>Kings Rd &amp; Taylors Road, Delahey VIC 3037</p></div></li>
+                          <li class="phone"><div class="info"><div class="contact-icon"></div><p>0410371299</p></div></li>
+                          <li class="hours"><div class="info"><div class="contact-icon"></div><p>7 Days, 5PM - 2AM</p></div></li>
                       </ul>
                   </div>
               </div>
@@ -48,6 +48,7 @@
       
     <main>
         <article class="main-image">
+            <!---/*image sourced from http://static.uk.businessinsider.com/image/5a2275e1c1bde0e0548b5701.jpg?_ga=2.265371719.998083639.1535778426-160032605.1535778426 and used for educational purposes only*/-->
             <img src="img/kebab-main-home.jpg">
             <div class="main-image-text">
                 <p>Kebab</p>
@@ -55,6 +56,7 @@
             </div>
         </article>
         <article class="main-about main-info">
+            <!---/*image sourced from https://imagesvc.timeincapp.com/v3/mm/image?url=https%3A%2F%2Fimg1.cookinglight.timeinc.net%2Fsites%2Fdefault%2Ffiles%2Fstyles%2Fmedium_2x%2Fpublic%2Fimage%2F2017%2F04%2Fmain%2Fgrass-fed-beef-sirloin-kebabs-1706p122.jpg%3Fitok%3DDBQZKc9Q&w=800&q=85 and used for educational purposes only*/-->
             <img src="img/kebab-main-about.jpg">
             <div class="main-text">
                 <h1>About us</h1>
@@ -62,6 +64,7 @@
             </div>
         </article>
         <article class="main-history main-info">
+            <!---/*image sourced from https://scontent.fmel5-1.fna.fbcdn.net/v/t1.0-9/22501_385041855029233_6752046124006630966_n.jpg?_nc_cat=0&oh=9f79002a8b4a7e75dff1ef59e46c31a3&oe=5C20E68B and used for educational purposes only*/-->
             <img src="img/kebab-main-history.jpg">
             <div class="main-text">
                 <h1>Our Story</h1>
@@ -75,11 +78,11 @@
     <footer>
         <div class="website-footer">
             <ul class="important-info">
-                <li class="location">Location: Kings Rd &amp; Taylors Road, Delahey VIC 3037</li>
-                <li class="phone">Phone: 0410371299</li>
-                <li class="hours">Opening Hours: 7 Days, 5PM - 2AM</li>
+                <li class="location"><div class="image"></div><p>Kings Rd &amp; Taylors Road, Delahey VIC 3037</p></li>
+                <li class="phone"><div class="image"></div><p>0410371299</p></li>
+                <li class="hours"><div class="image"></div><p>7 Days, 5PM - 2AM</p></li>
             </ul>
-            <p>Stop by for a kebab-astic time!</p>
+            <p class="saying">Stop by for a kebab-astic time!</p>
         </div>
         <div class="copyright-footer">
           <div>&copy;<script>

@@ -22,9 +22,9 @@
                   <div class="dropdown-contact">
                       <div class="expand"></div>
                       <ul class="important-info">
-                          <li class="location">Location: Kings Rd &amp; Taylors Road, Delahey VIC 3037</li>
-                          <li class="phone">Phone: 0410371299</li>
-                          <li class="hours">Opening Hours: 7 Days, 5PM - 2AM</li>
+                          <li class="location"><div class="info"><div class="contact-icon"></div><p>Kings Rd &amp; Taylors Road, Delahey VIC 3037</p></div></li>
+                          <li class="phone"><div class="info"><div class="contact-icon"></div><p>0410371299</p></div></li>
+                          <li class="hours"><div class="info"><div class="contact-icon"></div><p>7 Days, 5PM - 2AM</p></div></li>
                       </ul>
                   </div>
               </div>
@@ -49,6 +49,7 @@
       
     <main>
         <div class="kebab-skewer product">
+            <!---/*image sourced from https://www.seriouseats.com/recipes/images/2015/05/20150515-yang-rou-chuan-lamb-skewers-shao-zhong-16.jpg and used for educational purposes only*/-->
             <img src="img/menu-skewer.jpg">
             <div class="text">
                 <h1>Kebab Skewer</h1>
@@ -87,11 +88,11 @@
     <footer>
         <div class="website-footer">
             <ul class="important-info">
-                <li class="location">Location: Kings Rd &amp; Taylors Road, Delahey VIC 3037</li>
-                <li class="phone">Phone: 0410371299</li>
-                <li class="hours">Opening Hours: 7 Days, 5PM - 2AM</li>
+                <li class="location"><div class="image"></div><p>Kings Rd &amp; Taylors Road, Delahey VIC 3037</p></li>
+                <li class="phone"><div class="image"></div><p>0410371299</p></li>
+                <li class="hours"><div class="image"></div><p>7 Days, 5PM - 2AM</p></li>
             </ul>
-            <p>Stop by for a kebab-astic time!</p>
+            <p class="saying">Stop by for a kebab-astic time!</p>
         </div>
         <div class="copyright-footer">
           <div>&copy;<script>

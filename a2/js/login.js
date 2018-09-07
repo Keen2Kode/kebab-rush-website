@@ -4,8 +4,8 @@ function getId(id) {
   
 function formValidate(){
   	var errors= 0;
-  	if (check('email') == false)	errors++;
-    if (check('password') == false)	errors++;
+  	if (emailCheck()    == false)	errors++;
+    if (passwordCheck() == false)	errors++;
     if (errors>0){
         alert("We've found " + errors + " errors with your login information");
     	return false;
@@ -13,16 +13,39 @@ function formValidate(){
     return true;
 }
   
-function check(id){
-  	var errorMsg = "";
-    if (getId(id).value.length == 0)	errorMsg = "Please enter " + id;
-    if (getId(id).value.includes(" "))	errorMsg = "Spaces are not allowed";
-    
-    var errorId = id + "Error";
+
+
+// common check method
+function check(id,errorMsg) {
     getId(id).placeholder = errorMsg;
     
+    //var errorId = id + "Error"; assignment 3
     if (errorMsg == "")	
     	return true;
-    getId(id).value = "";
-    return false;
+    else
+        getId(id).value = "";
+        return false;
+}
+    
+// returns true if the errorMsg is empty
+// this means there is no error
+function passwordCheck() {
+    var errorMsg = "";
+    var password = getId("password").value;
+    
+    if (password.length < 3)	errorMsg = "Min. 3 characters allowed";
+    if (password.includes(" "))	errorMsg = "Spaces not allowed";
+    
+    return check('password',errorMsg);
+}
+
+function emailCheck() {
+    var errorMsg = "";
+    var email = getId('email').value;
+    var pattern = /^[a-zA-Z0-9_\-.]+@[a-zA-Z0-9\-.]+$/;
+
+    // input does not match pattern
+    if (!pattern.test(email))    errorMsg = "Wrong email format";
+    
+    return check('email',errorMsg);
 }
