@@ -47,10 +47,9 @@ function qtyCheck() {
     if (Number.isInteger(parseInt(qty)) && qty > 0)
         return true;
     //Fail case
-    alert("Check the amount you entered for ordering");
     if (qty <= 0)
-        getId("cost").innerHTML = "Please enter a positive quantity";
+        alert("Please enter a positive quantity");
     else
-        getId("cost").innerHTML = "To order, please enter a number";
+        alert("To order, please enter a number");
         return false;
 }
