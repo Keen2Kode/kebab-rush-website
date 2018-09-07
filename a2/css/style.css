@@ -233,7 +233,7 @@ header nav .icon:hover .login-account{
         display:block;
     }
     
-    header .btn-container p{
+    header nav .btn-container p{
         display:none;
     }
     
