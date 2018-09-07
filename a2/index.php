@@ -21,9 +21,9 @@
                   <div class="dropdown-contact">
                       <div class="expand"></div>
                       <ul class="important-info">
-                          <li class="location">Location: Kings Rd &amp; Taylors Road, Delahey VIC 3037</li>
-                          <li class="phone">Phone: 0410371299</li>
-                          <li class="hours">Opening Hours: 7 Days, 5PM - 2AM</li>
+                          <li class="location">Kings Rd &amp; Taylors Road, Delahey VIC 3037</li>
+                          <li class="phone">0410371299</li>
+                          <li class="hours">7 Days, 5PM - 2AM</li>
                       </ul>
                   </div>
               </div>
