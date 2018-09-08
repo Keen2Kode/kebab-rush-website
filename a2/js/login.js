@@ -40,8 +40,8 @@ function passwordCheck() {
     var errorMsg = "";
     var password = getId("password").value;
     
-    if (password.length < 3)	errorMsg = "Min. 3 characters allowed";
-    if (password.includes(" "))	errorMsg = "Spaces not allowed";
+    if (password.length < 3)    errorMsg = "Min. 3 characters allowed";
+    if (password.includes(" ")) errorMsg = "Spaces not allowed";
     
     return check('password',errorMsg);
 }
