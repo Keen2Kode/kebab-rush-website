@@ -1,3 +1,5 @@
+//http://jsfiddle.net/AbSh2/618/
+
 function getId(id) {
     return document.getElementById(id);
 }
