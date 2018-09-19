@@ -1,5 +1,6 @@
 // ensure that this code is placed in the footer
 // add event listeners in assignment 3
+// http://jsfiddle.net/AbSh2/590/
 
 
 function getId(id) {
