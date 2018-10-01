@@ -1,3 +1,5 @@
+//http://jsfiddle.net/AbSh2/618/
+
 function getId(id) {
     return document.getElementById(id);
 }
@@ -15,7 +17,7 @@ function setUnitPrice() {
 //single method to increment or decrement the textArea number
 function crement(incrementOrDecrement) {
     var qty = getId('qty').value; //changed from qtyId to 'qty', similar change made below
-
+ 
     if (Number.isInteger(parseInt(qty)))
         switch (incrementOrDecrement) {
             case "increment" : getId('qty').value = (qty>=0) ? parseInt(qty)+1 : 0;	break;
@@ -43,7 +45,7 @@ function qtyCheck() {
     //console.log?
     //setQtyId('qty');
     var qty = getId('qty').value;
-
+ 
     if (Number.isInteger(parseInt(qty)) && qty > 0)
         return true;
     //Fail case
@@ -52,4 +54,4 @@ function qtyCheck() {
     else
         alert("To order, please enter a number");
         return false;
-}
+} 
