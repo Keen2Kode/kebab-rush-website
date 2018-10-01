@@ -32,7 +32,7 @@
                   <nav>
                       <a href="login.php" class="icon"><div class="login-account" width=60px height=60px></div></a>
                       <div class="dropdown-menu">
-                          <div class="btn-container"><a href="menu.php" class="dropbtn">
+                          <div class="btn-container"><a href="products.php" class="dropbtn">
                               <div class="menu"></div>
                               <p>Menu</p>
                           </a></div>
