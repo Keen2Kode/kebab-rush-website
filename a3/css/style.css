@@ -737,6 +737,24 @@ main .cart-container{
     background-color: #2d2d2d; 
     padding: 10px;
     border-radius: 20px;
+    float:left;
+    width: calc(100% - 60px);
+}
+
+main .cart-container .totalContainer{
+    float:right;
+    display:block;
+    width:100%;
+}
+
+main .cart-container .totalContainer p{
+    color: #ffffff;
+    margin:20px 0xp 0px 0px;
+    text-align: right;
+    font-family: corbel;
+    font-size: 25px;
+    line-height: 0px;
+    padding:0px 10px;
 }
 
 main .cart-container .cart{
@@ -747,7 +765,9 @@ main .cart-container .cart{
 }
 
 main .cart-container .cart-buttons{
-    margin: 30px 0px 10px 0px;
+    margin: 10px 0px 10px 0px;
+    width:100%;
+    float:left;
 }
 
 main .cart-container .cart-buttons button{

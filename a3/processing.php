@@ -20,13 +20,14 @@ if (isset($_POST["add"], $_POST["id"], $_POST["qty"], $_POST["oid"])){
     
     if ($found == true){
         $cartID = $id . "-" . $oid;
+        if(isset($_COOKIE["cart"])) $productArray = unserialize($_COOKIE["cart"]);
+        $productArray[$cartID] = array("pid" => $id, "oid" => $oid, "qty" => $qty);
         
-        $_SESSION["cart"][$cartID]["pid"] = $id;
-        $_SESSION["cart"][$cartID]["oid"] = $oid;
-        $_SESSION["cart"][$cartID]["qty"] = $qty;
+        ksort($productArray);
+        print_r($productArray);
         
-        ksort($_SESSION["cart"]);
-        
+        $cookieArray = serialize($productArray);
+        setcookie("cart", $cookieArray, 0);
         header("Location: cart.php");
         exit();
     }
@@ -43,7 +44,31 @@ if (isset($_POST["clear"])){
     exit();
 }
 
-if (isset($_POST["name"], $_POST["email"], $_POST["address"], $_POST["phone"], $_POST["card"], $_POST["expiry"], $_SESSION["cart"])){
+if (isset($_POST["name"], $_POST["email"], $_POST["address"], $_POST["phone"], $_POST["card"], $_POST["expiry"], $_COOKIE["cart"])){
+    $errors = false;
+    $cart = unserialize($_COOKIE["cart"]);
+    foreach($cart as $productID => $item){
+        if(
+            (array_key_exists("pid", $item)) == false &&
+            (array_key_exists("oid", $item)) == false &&
+            (array_key_exists("qty", $item)) == false){
+            $errors = true;
+            unset($cart[$productID]);
+            setcookie("cart", $cart, 0);
+        }
+    }
+    
+    if ($errors == true){
+        header("Location: cart.php");
+        exit();
+    }
+    
+    foreach($cart as $productID => $item){
+        $_SESSION["cart"][$productID] = $item;
+    }
+    unset($_COOKIE["cart"]);
+    setcookie("cart", "", 1);
+    
     $errors = false;
     
     if (preg_match(("/^[a-zA-Z ,'\-]+[ ][a-zA-Z ,'\-]+$/"), $_POST["name"]) == false) $errors = true;
@@ -97,7 +122,7 @@ if (isset($_POST["name"], $_POST["email"], $_POST["address"], $_POST["phone"], $
             
             $fp = fopen("orders.txt", "a");
             flock($fp, LOCK_EX);
-            fputcsv($fp, $fileWrite);
+            fputcsv($fp, $fileWrite, "\t");
             flock($fp, LOCK_UN);
             fclose($fp);
             
@@ -111,12 +136,12 @@ if (isset($_POST["name"], $_POST["email"], $_POST["address"], $_POST["phone"], $
         exit();
     }
     else{
-//        header("Location: checkout.php");
-//        exit();
+        header("Location: checkout.php");
+        exit();
     }
 }
 
-//header("Location: index.php");
-//exit();
+header("Location: index.php");
+exit();
 
 ?>

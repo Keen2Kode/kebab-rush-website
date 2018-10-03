@@ -79,45 +79,46 @@ function end_module(){
 OUTPUT;
     echo $html;
 }
-
-function printSessionCart($class){
-    if(isset($_SESSION["cart"])){
-        echo "<table class=\"" . $class . "\">";
-        $html = <<<"OUTPUT"
-        <tr>
-            <th>Product</th>
-            <th>ID</th>
-            <th>Quantity</th>
-            <th>Size</th>
-        </tr>
+$totalPrice = 0;
+function printSessionCart($class, $array){
+    echo "<table class=\"" . $class . "\">";
+    $html = <<<"OUTPUT"
+    <tr>
+        <th>Product</th>
+        <th>ID</th>
+        <th>Quantity</th>
+        <th>Size</th>
+        <th>Price</th>
+    </tr>
 OUTPUT;
-        echo $html;
+    echo $html;
 
-        foreach($_SESSION["cart"] as $productID => $item){
-            $found = false;
-            $fp = fopen("products.txt", "r");
-            flock($fp, LOCK_SH);
-            while(($line = fgets($fp)) == true && $found == false){
-                $records = explode("\t", $line);
-                if($records[0] == $item["pid"] && $records[1] == $item["oid"]){
-                    $found = true;
-                }
+    $totalPrice = 0;
+    foreach($array as $productID => $item){
+        $found = false;
+        $fp = fopen("products.txt", "r");
+        flock($fp, LOCK_SH);
+        while(($line = fgets($fp)) == true && $found == false){
+            $records = explode("\t", $line);
+            if($records[0] == $item["pid"] && $records[1] == $item["oid"]){
+                $found = true;
             }
-            flock($fp, LOCK_UN);
-            fclose($fp);
-
-            echo "<tr><td>" . $records[2] . "</td>";
-            echo "<td>" . $records[0] . "</td>";
-            echo "<td>" . $item["qty"] . "</td>";
-            echo "<td>" . $records[5] . "</td>";
-            echo "</tr>";
         }
+        flock($fp, LOCK_UN);
+        fclose($fp);
 
-        echo "</table>";
+        echo "<tr><td>" . $records[2] . "</td>";
+        echo "<td>" . $records[0] . "</td>";
+        echo "<td>" . $item["qty"] . "</td>";
+        echo "<td>" . $records[5] . "</td>";
+
+        $totalPrice += $records[6] * $item["qty"];
+        echo "<td>$" . $records[6] * $item["qty"] . "</td>";
+        echo "</tr>";
     }
-    else{
-        echo "<h1>No Items In Cart</h1>";
-    }
+
+    echo "</table>";
+    return $totalPrice;
 }
 
 ?>

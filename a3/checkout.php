@@ -1,8 +1,27 @@
 <?php require_once("tools.php"); ?>
 
-<?php if(isset($_SESSION["cart"]) == false){
-    header("Location: index.php");
+<?php if(isset($_COOKIE["cart"]) == false){
+    header("Location: cart.php");
     exit();
+}
+else{
+    $errors = false;
+    $cart = unserialize($_COOKIE["cart"]);
+    foreach($cart as $productID => $item){
+        if(
+            (array_key_exists("pid", $item)) == false &&
+            (array_key_exists("oid", $item)) == false &&
+            (array_key_exists("qty", $item)) == false){
+            $errors = true;
+            unset($cart[$productID]);
+            setcookie("cart", $cart, 0);
+        }
+    }
+    
+    if ($errors == true){
+        header("Location: cart.php");
+        exit();
+    }
 }
 ?>
 
