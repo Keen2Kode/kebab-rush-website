@@ -9,8 +9,8 @@ if (isset($_POST["add"], $_POST["id"], $_POST["qty"], $_POST["oid"])){
     $found = false;
     $fp = fopen("products.txt", "r");
     flock($fp, LOCK_SH);
-    while(($line = fgets($fp)) == true && $found == false){
-        $records = explode("\t", $line);
+    while(($line = fgetcsv($fp, 0, "\t")) == true && $found == false){
+        $records = $line;
         if($records[0] == $id && $records[1] == $oid && $qty > 0){
             $found = true;
         }
@@ -20,14 +20,13 @@ if (isset($_POST["add"], $_POST["id"], $_POST["qty"], $_POST["oid"])){
     
     if ($found == true){
         $cartID = $id . "-" . $oid;
-        if(isset($_COOKIE["cart"])) $productArray = unserialize($_COOKIE["cart"]);
-        $productArray[$cartID] = array("pid" => $id, "oid" => $oid, "qty" => $qty);
         
-        ksort($productArray);
-        print_r($productArray);
+        $_SESSION["cart"][$cartID]["pid"] = $id;
+        $_SESSION["cart"][$cartID]["oid"] = $oid;
+        $_SESSION["cart"][$cartID]["qty"] = $qty;
         
-        $cookieArray = serialize($productArray);
-        setcookie("cart", $cookieArray, 0);
+        ksort($_SESSION["cart"]);
+        
         header("Location: cart.php");
         exit();
     }
@@ -44,30 +43,7 @@ if (isset($_POST["clear"])){
     exit();
 }
 
-if (isset($_POST["name"], $_POST["email"], $_POST["address"], $_POST["phone"], $_POST["card"], $_POST["expiry"], $_COOKIE["cart"])){
-    $errors = false;
-    $cart = unserialize($_COOKIE["cart"]);
-    foreach($cart as $productID => $item){
-        if(
-            (array_key_exists("pid", $item)) == false &&
-            (array_key_exists("oid", $item)) == false &&
-            (array_key_exists("qty", $item)) == false){
-            $errors = true;
-            unset($cart[$productID]);
-            setcookie("cart", $cart, 0);
-        }
-    }
-    
-    if ($errors == true){
-        header("Location: cart.php");
-        exit();
-    }
-    
-    foreach($cart as $productID => $item){
-        $_SESSION["cart"][$productID] = $item;
-    }
-    unset($_COOKIE["cart"]);
-    setcookie("cart", "", 1);
+if (isset($_POST["name"], $_POST["email"], $_POST["address"], $_POST["phone"], $_POST["card"], $_POST["expiry"], $_SESSION["cart"])){
     
     $errors = false;
     
@@ -108,8 +84,8 @@ if (isset($_POST["name"], $_POST["email"], $_POST["address"], $_POST["phone"], $
             $found = false;
             $fp = fopen("products.txt", "r");
             flock($fp, LOCK_SH);
-            while(($line = fgets($fp)) == true && $found == false) {
-                $records = explode("\t", $line);
+            while(($line = fgetcsv($fp, 0, "\t")) == true && $found == false) {
+                $records = $line;
                 if($records[0] == $fileWrite["pid"] && $records[1] == $fileWrite["oid"]) $found = true;
             }
             flock($fp, LOCK_UN);

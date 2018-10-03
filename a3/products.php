@@ -9,8 +9,8 @@
     
     $fp = fopen("products.txt", "r");
     flock($fp, LOCK_SH);
-    while($line = fgets($fp)) 
-        $records[] = explode("\t", $line);
+    while($line = fgetcsv($fp, 0, "\t")) 
+        $records[] = $line;
     flock($fp, LOCK_UN);
     fclose($fp);
     

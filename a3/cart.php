@@ -11,8 +11,8 @@ top_module();
         <h1>Cart:</h1>
         <?php
         echo "<div class=\"totalContainer\">";
-        if(isset($_COOKIE["cart"])){
-            echo "<p class=\"totalPrice\">Total Price: $" . printSessionCart("cart", unserialize($_COOKIE["cart"])) . "</p></div>";
+        if(isset($_SESSION["cart"])){
+            echo "<p class=\"totalPrice\">Total Price: $" . printSessionCart("cart") . "</p></div>";
             $html = <<<"OUTPUT"
             <div class="cart-buttons">
                 <form action="processing.php" method="post" id="clearForm">

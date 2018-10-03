@@ -80,7 +80,7 @@ OUTPUT;
     echo $html;
 }
 $totalPrice = 0;
-function printSessionCart($class, $array){
+function printSessionCart($class){
     echo "<table class=\"" . $class . "\">";
     $html = <<<"OUTPUT"
     <tr>
@@ -94,12 +94,12 @@ OUTPUT;
     echo $html;
 
     $totalPrice = 0;
-    foreach($array as $productID => $item){
+    foreach($_SESSION["cart"] as $productID => $item){
         $found = false;
         $fp = fopen("products.txt", "r");
         flock($fp, LOCK_SH);
-        while(($line = fgets($fp)) == true && $found == false){
-            $records = explode("\t", $line);
+        while(($line = fgetcsv($fp, 0, "\t")) == true && $found == false){
+            $records = $line;
             if($records[0] == $item["pid"] && $records[1] == $item["oid"]){
                 $found = true;
             }

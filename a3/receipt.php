@@ -2,7 +2,7 @@
 require_once("tools.php");
 
 if(isset($_SESSION["cart"], $_SESSION["user"])){
-    printSessionCart("receipt", $_SESSION["cart"]);
+    printSessionCart("receipt");
     unset($_SESSION["cart"]);
     unset($_SESSION["user"]);
 }
