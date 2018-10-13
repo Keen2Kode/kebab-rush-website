@@ -1,6 +1,10 @@
 <?php require_once("tools.php"); ?>
 
-<?php top_module(); ?>
+<head>
+    <?php head_module(); ?>
+</head>
+
+<?php header_module(); ?>
 
 <main>
     <article class="main-image">

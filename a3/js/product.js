@@ -55,3 +55,12 @@ function qtyCheck() {
         alert("To order, please enter a number");
         return false;
 } 
+
+function toggleDebug(){
+    var x = document.getElementById("debugModule");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}

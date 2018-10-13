@@ -1,6 +1,12 @@
 <?php require_once("tools.php"); ?>
 
-<?php top_module() ?>
+<head>
+    <?php head_module(); ?>
+    <script src="../wireframe.js"></script>
+    <script src="js/login.js"></script>
+</head>
+
+<?php header_module(); ?>
 
     <main>
         <div class="login">

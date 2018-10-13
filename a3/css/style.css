@@ -8,10 +8,14 @@ https://www.lifewire.com/z-index-in-css-3464217
 dropdown menu i obtianed from lecture slides and the rest of the info i obtained from w3schools*/
 
 body {
-    background-color: #9A3531;
     margin: 0;
     min-width: 300px;
     min-height: 475px;
+    width:100%;
+}
+
+main {
+    background-color: #9A3531;
 }
 
 header{
@@ -685,7 +689,7 @@ main .login .content .info{
     font-family: corbel;
 }
 
-::placeholder {
+main .login ::placeholder {
     color: #ffffff;
     opacity:1;
     font-family: corbel;
@@ -718,11 +722,11 @@ main .login .content .text{
     margin:20px 40px;
 }
 
-main table{
+table {
     border-collapse: collapse;
 }
 
-main table, td, th{
+main .cart td, .cart th{
     border: 1px solid #ffffff;
 }
 
@@ -821,6 +825,13 @@ main .checkout .input-details .titles{
     float:left;
 }
 
+main .checkout p{
+    color: #ffffff;
+    margin:0px;
+    font-family: corbel;
+    line-height:40px;
+}
+
 main .checkout .input-details .titles p{
     text-align: right;
     margin:0px;
@@ -832,7 +843,7 @@ main .checkout .input-details .titles p{
 
 main .checkout .input-details .inputs{
     display:inline-block;
-    width:200px;
+    width:180px;
     float:left;
     margin:0px 5px;
 }
@@ -849,6 +860,19 @@ main .checkout .input-details .inputs input{
     border-bottom-right-radius: 15px;
     box-sizing: border-box;
     font-family: corbel;
+    color: #000000;
+    background-color: #ffffff;
+}
+
+main .checkout .errors{
+    display: inline-block;
+    float:left;
+    width:fit-content;
+}
+
+main .checkout .errors p{
+    margin: 0px 0px 0px 10px;
+    height: 40px;
 }
 
 main .checkout .submit{
@@ -862,6 +886,19 @@ main .checkout .submit{
     color:#ffffff;
     font-family: corbel;
     float:right;
+}
+
+main .checkout .inputs .card{
+    background-image: none;
+    background-size: 30px;
+    background-position: 90% 50%;
+    background-repeat: no-repeat;
+}
+
+.card::-webkit-inner-spin-button, 
+.card::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
 }
 
 @media only screen and (max-width: 800px){
@@ -1014,6 +1051,9 @@ footer .website-footer{
     height: 100px;
     font-size: 15px;
     color:#ffffff;
+    display:block;
+    float:left;
+    width:100%;
 }
 
 footer .website-footer .saying{
@@ -1030,6 +1070,20 @@ footer .copyright-footer{
     text-align: right;
     font-size:15px;
     color: #9b9b9b;
+    display:block;
+    float:left;
+    width:100%;
+}
+
+footer .copyright-footer button{
+    display:inline-block;
+}
+
+.debug-module{
+    display:none;
+    float:left;
+    width:100%;
+    overflow: scroll;
 }
 
 @media only screen and (max-width: 800px){
@@ -1080,6 +1134,101 @@ footer .copyright-footer{
         background-image: url(../img/time-white.png);
         background-size:10px 10px;
     }
+}
+
+.receipt {
+    padding: 20px;
+    font-family: corbel;
+}
+
+.receipt .top{
+    text-align: center;
+}
+
+.receipt .top img{
+    width: 200px;
+    display:inline-block;
+}
+
+.receipt .top .line{
+    border-bottom: 10px solid #9A3531;
+    margin:20px 0px;
+}
+
+.receipt .transaction{
+    border-bottom: 1px solid #9A3531;
+    padding:10px 0px;
+    margin:0px;
+}
+
+.receipt .transaction p{
+    font-weight: bold;
+    width:fit-content;
+    margin:0px;
+    display:inline-block;
+    padding:0px;
+    line-height: 30px;
+}
+
+.receipt .transaction .receipt{
+    font-size: 30px;
+}
+
+.receipt .transaction .date{
+    float:right;
+}
+
+.receipt .details{
+    width: 100%;
+    float:left;
+    margin:0px;
+    display:block;
+}
+
+.receipt .details .organisation{
+    width:fit-content;
+    display:inline-block;
+    float:left;
+    font-size: 15px;
+    max-width:300px;
+}
+
+.receipt .details .customer{
+    width:fit-content;
+    display:inline-block;
+    float:right;
+    font-size:15px;
+    text-align: right;
+    max-width: 300px;
+}
+
+.receipt .details .order{
+    width:100%;
+    display:block;
+}
+
+.receipt .details{
+    border-bottom: 1px solid #9A3531;
+}
+
+.receipt .order{
+    display:block;
+    width:100%;
+    float:left;
+}
+
+.receipt .receipt-table td, .receipt-table th{
+    border: 1px solid #000000;
+}
+
+.receipt .receipt-table{
+    width: 100%;
+}
+
+.receipt h3{
+    float:right;
+    width:fit-content;
+    margin:10px 0px;
 }
 
 *{

@@ -1,12 +1,20 @@
 <?php require_once("tools.php"); ?>
 
-<?php top_module() ?>
+<head>
+    <?php head_module(); ?>
+    <script src="../wireframe.js"></script>
+    <script src="js/product.js"></script>
+</head>
+
+<?php header_module(); ?>
 
 <main>
     <?php
+    //gets the id from the url
     $searchID = "";
     if (isset($_GET["id"])) $searchID = $_GET["id"];
     
+    //stores each line of products.txt in records array
     $fp = fopen("products.txt", "r");
     flock($fp, LOCK_SH);
     while($line = fgetcsv($fp, 0, "\t")) 
@@ -14,6 +22,7 @@
     flock($fp, LOCK_UN);
     fclose($fp);
     
+    //searches the records array for an id that matches the one in the url
     $foundID = false;
     for ($i = 1; $i<count($records); $i++){
         if ($records[$i][0] == $searchID){
@@ -22,6 +31,7 @@
         }
     }
     
+    //if there is a match then it creates an individual products page with all data being taken from that record index
     if ($foundID == true){
         echo "<div class=\"product\">";
         echo "<img src=\"img/menu-" . $records[$productIndex][2] . ".jpg\">";
@@ -61,17 +71,21 @@ OUTPUT;
 OUTPUT;
         echo $html;
     }
+    
+    //if no id is found then it prints each individual item in the records array
     else{
         echo "<ul class=\"menu-list\">";
-        $itemIDDown[] = "";
+        $itemIDDown[] = ""; //array of all item ids that have been written
         
+        //goes through records array
         for ($i = 1; $i<count($records); $i++){
+            //checks if item has been written down or not
             $itemDown = false;
             foreach ($itemIDDown as $ID){
                 if ($ID == $records[$i][0]) $itemDown = true;
             }
             
-            array_push($itemIDDown, $records[$i][0]);
+            //if the item has not been written down then it writes it
             if ($itemDown == false){
                 echo "<li>";
                 echo "<a href=\"products.php" . "?id=" . $records[$i][0] . "\">";
@@ -81,6 +95,9 @@ OUTPUT;
                 echo "<p>" . $records[$i][4] . "</p>";
                 echo "</article></a></li>";
             }
+            
+            //adds item id to array to show that it has been written down
+            array_push($itemIDDown, $records[$i][0]);
         }
         echo "</ul>";
     }
