@@ -1080,7 +1080,7 @@ footer .copyright-footer button{
 }
 
 .debug-module{
-    display:none;
+    display:block;
     float:left;
     width:100%;
     overflow: scroll;
